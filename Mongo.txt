@@ -37,11 +37,3 @@
 	
 	-install all these and set path variable for win
 
-
-44:08-code starts
-
-
-
-
-
-

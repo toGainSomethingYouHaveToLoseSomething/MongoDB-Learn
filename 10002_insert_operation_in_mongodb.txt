@@ -1,0 +1,44 @@
+db.collection_name.insertOne(
+    {
+        field1: value1,
+        field2:value2,
+        ...
+    }
+)
+
+
+db.collection_name.insertMany(
+    [
+        {field1:value1, field2:value2},
+        {field1:value1, field2:value2},
+        .....
+    ]
+)
+
+
+
+
+to see:
+db.collection_name.find()
+
+
+when to use Special characters:
+*(special characters): If a field name contains special characters or spaces,
+                       or starts with a numeric digit, using quotes is necessary
+*(reserved words): If a field name is a reserved keyword in MongoDB, 
+                   use quotes to distinguish it from the reerved keyword
+
+
+
+
+ordered and unordered inserts:
+by default: {ordered:true}
+        -jodi onk gulo object insert korar somoy kono ektay erorr ase tahole porer gula ar add hobe na 
+db.collection_name.insertMany([..],{ordered:false})
+        -jodi onk gulo object insert korar somoy kono ektate error ase tahole oita bade baki sobgula insert hoye jabe
+
+
+case sensitivity in MongoDB
+* collection names are case-sensitive.
+* field names within documents are case-sensitive.
+
