@@ -1,0 +1,47 @@
+1. what is mongodb:
+	-open source
+	-document-oriented NoSQL dbms (.json)
+	-flexibility,scalability,performance in handling unstructured of semi-structured data
+
+2.diff btwn SQL & NoSQL
+	-structured	un/semi-structured
+	-table		json
+	-relational 	non-relational
+	-E-com, HR mng	Social media
+	-MySQL		-Redis,mongodb
+
+
+3. advantages:
+	-flexible schema design
+	-scalability (horizontal scaling)
+	-document oriented storage
+	-dynamic queries (indexes)
+	-aggregation framework
+	-open source and community
+
+
+4. how mongodb works: 
+	-frontend->backend->mongodb server->storage engine-> database
+	-storage engine, convert json to bson,operate curd
+	
+
+5. json vs bson:
+	- bson: binary of json
+	
+
+
+6. tools we need:
+	https://www.mongodb.com/try/download/community
+	https://www.mongodb.com/try/download/shell
+	https://www.mongodb.com/try/download/database-tools
+	
+	-install all these and set path variable for win
+
+
+44:08-code starts
+
+
+
+
+
+
