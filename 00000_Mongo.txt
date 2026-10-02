@@ -37,3 +37,4 @@
 	
 	-install all these and set path variable for win
 
+next day: cursors
