@@ -1,0 +1,13 @@
+find():
+    db.collection_name.find({key:value})
+
+findOne():
+    db.collection_name.findOne({key:value})
+
+
+-----importing json in mongodb---------
+mongoimport jsonfile.json -d database_name -c collection_name               //for multiple json
+mongoimport jsonfile.json -d database_name -c collection_name --jsonArray   // for array of json
+
+-----exporting json from mongodb-------
+mongoexport -d database_name -c collection_name -o path\filename.json
