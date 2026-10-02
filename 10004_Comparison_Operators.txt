@@ -1,0 +1,16 @@
+&eq = equal 
+&ne = not equal
+&gt = greather than
+&gte = greater than equal
+&lt = less than
+&lte = less than equal
+&in = in operator [ like multiple or]
+&nin = not in operator
+
+db.collection_name.find(
+    {
+        'fieldName' : { &operator: value }
+    }
+)
+example->: db.products.find({'price': {$eq:98}})
+example->: db.products.find({'price': {&in:[234,34,98]}})
