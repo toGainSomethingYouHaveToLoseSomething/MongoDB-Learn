@@ -1,0 +1,36 @@
+? find post with commented with a specific user.
+{
+    post_id: "1",
+    titile: "this is titile"
+    comments: [
+        user:"user1", comment:"looking good"
+        user:"user2", comment:"beautiful"
+    ]
+}
+
+query:
+db.comments.find(
+    {
+        'comment.user':"user1"
+    }
+)
+
+
+? find the documents where the views in metadata field > 1200. 
+
+db.posts.find(
+    {
+        metadata.views : { $gt: 1200 }
+    }
+)
+
+
+? we need to find out the document where the user in comments = henry and 
+  also the metadata likes value > 50.
+
+db.post.find({
+    $and : [
+        {'comments.user':'henry'},
+        {'metadata.likes': { $gt: 50}}
+    ]
+})
