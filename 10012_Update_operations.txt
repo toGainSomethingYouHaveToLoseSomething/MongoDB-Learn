@@ -1,0 +1,39 @@
+$set
+
+db.collection_name.updateOne(
+    {filter},
+    {$set: {existingField: 'newValue', newField: 'newvalue'.....}}
+)
+
+db.collection_name.updateMany(
+    {filter},
+    {$set: {existingField:'newvalue',.....}}
+)
+
+example:
+db.products.updateOne(
+    {_id:ObjectId("64c2362be32f4a51b19b9271")},
+    {$set: {'price':45}}
+)
+
+db.products.updateMany(
+    {price:120},
+    {$set: {isFeatured:true}}
+)
+
+
+
+
+
+
+Removing and Renaming Fields:
+
+db.collection_name.updateOne(
+    {filter},
+    {$unset: {fieldname:1}}
+)
+
+db.collection_name.updateOne(
+    {filter},
+    { $rename:{oldFieldName: 'newFieldName'}}
+)
