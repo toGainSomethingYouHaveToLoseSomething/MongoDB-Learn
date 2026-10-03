@@ -1,0 +1,15 @@
+db.collection_name.find(
+    {},
+    { field1: 1, field2:1}
+)
+
+(1) for include and (0) for exclude
+
+examples:
+
+db.comments.find(
+    {
+        'comments': {$size:2},
+    }
+    {comments:1}
+) 
