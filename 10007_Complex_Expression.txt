@@ -1,0 +1,20 @@
+complex Expressions: $multiply, $add, 
+{$expr: { operator: [field,value] }}
+example:
+db.products.find(
+    {
+        $expr: { $gt: ['$price',1340] }
+    }
+)
+advantages of complex Expressions:
+? Find sales where ( quantity * price ) is greater than targetPrice
+ 
+db.sales.find(
+    {
+        $expr: {
+            $gt : [
+                { $multiply: ['$quantity','$price'] }, '$targetPrice'
+            ]
+        }
+    }
+)

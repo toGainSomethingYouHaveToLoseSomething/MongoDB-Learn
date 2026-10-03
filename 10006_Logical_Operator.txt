@@ -1,0 +1,44 @@
+$and
+$or
+$not
+$nor
+
+
+{
+    $and: [{condition1},{condition2},....]
+}
+* or and nor is same as and
+
+{
+    field: {$not: {operator:value}}
+}
+
+example:
+AND:
+db.products.find(
+    {
+        $and: [{'price':{$gt:100}}, {'name':'Diamond Ring'}]
+    }
+)
+alternate,
+db.products.find(
+    {
+        'price': {$gt:200},
+        'name':'Diamond Ring'
+    }
+)
+
+OR:
+db.products.find(
+    {
+        $or: [{'price':{$gt:100}}, {'name':'Diamond Ring'}]
+    }
+)
+
+NOR: mention gula bade sob dekhabe
+db.products.find(
+    {
+        $nor: [{'price':{$gt:100}}, {'name':'Diamond Ring'}]
+    }
+)
+
