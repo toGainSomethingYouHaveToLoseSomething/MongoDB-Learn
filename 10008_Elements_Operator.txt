@@ -1,0 +1,39 @@
+$exists
+$type
+$size
+
+
+{
+    field: { $exits: <boolean> }
+}
+
+{
+    field: { $type: "<bson-data-type>" }
+}
+
+{
+    field: { $size: <array-length> }
+}
+
+
+examples:
+
+db.products.find(
+    {
+        price: {$exists: true}
+    }
+).count()       // tells that price field exist or not
+
+
+db.products.find(
+    {
+        'price' : {$type: 'number'}
+    }
+)
+
+db.comments.find(
+    {
+        'comments': {$size:1}
+    }
+)       // will return the documents those contains only one comments (comments field is an array type)
+
