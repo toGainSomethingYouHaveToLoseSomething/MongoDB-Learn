@@ -1,0 +1,33 @@
+$all
+$elemMatch
+
+{
+    fieldName : { $all: [value1,value2,value3,...]}
+}       // fieldname must be an array
+
+example:
+db.comments.find(
+    {
+        'comments.user': { $all: ['Alice', 'Vinod']}
+    }
+)   // will return those document that contains user alice and vinod in comment section
+
+
+{
+    fieldName : { $elemMatch: {query1, query2, ..... }}
+}
+example:
+db.comments.find(
+    {
+        'comments': { $elemMatch: {'user':'Vinod','text':'thanks',} }
+    }
+)   // will return the documents where 'thanks' commented by Vinod
+
+
+document:
+{
+    comments: [
+        {user: 'alice' , text: 'hi'},
+        {user: 'vinod', text:'thanks'}
+    ]
+}
