@@ -1,0 +1,35 @@
+$push
+$pop
+$set
+
+
+db.collection_name.updateOne(
+    {filter},
+    {$push: { arrayField: "newElement"}}
+)
+
+db.collection_name.updateOne(
+    {filter},
+    {Spop: { arrayField: value}}
+)
+
+db.collection_name.updateOne(
+    {filter},
+    {$set: { "arrayField.$.text": "updated text"}}
+)
+
+examples:
+db.comments.updateOne(
+    {_id: 5},
+    { $push: {comments: {user:'eva',text:'yes'}}}
+)
+
+db.comments.updateOne(
+    {_id:5},
+    {$pop: {comments:1}}
+)   // it will delete the last one
+
+db.comments.updateOne(
+    {_id:7, 'comments.user':'Alice'},
+    { $set: {'comments.$.text':'Awesome'}}
+)
