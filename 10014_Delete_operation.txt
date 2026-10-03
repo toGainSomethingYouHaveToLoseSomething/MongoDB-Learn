@@ -1,0 +1,8 @@
+db.collection_name.deleteONe(
+    {filter}
+)
+
+db.collection_name.deleteMany(
+    {price:55}
+)
+
