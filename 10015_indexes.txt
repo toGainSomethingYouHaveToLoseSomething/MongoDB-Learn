@@ -1,0 +1,33 @@
+.explain('executionStats') //meta details of query
+
+db.collection.createIndex(
+    {fieldname: 1}
+)
+(1) for storing indexes in ascending order
+(-1) for string indexes in descending order
+
+db.collection.getIndexes()
+_id is default index.
+
+db.collection.dropIndex({fieldname:1})
+db.collection.dropIndex('index_name')
+
+
+example:
+db.users.createIndex(
+    {email:1},
+    {unique:true}
+)
+
+db.collection.createIndex({fieldname:'text})
+db.collection.find({
+    $text: {
+        $search: "keyword"
+    }
+}) // faster than regex
+db.products.find({field: ($regex: "air")})
+
+//where not to use indexes
+1. the field searched rarely
+2. the field returns more than 60% of its collection
+
