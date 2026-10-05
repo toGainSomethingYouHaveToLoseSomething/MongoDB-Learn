@@ -37,4 +37,4 @@
 	
 	-install all these and set path variable for win
 
-next day: indexes : 2:54:00
+next day: aggregation : 3:17:00
