@@ -30,4 +30,5 @@ db.products.find({field: ($regex: "air")})
 //where not to use indexes
 1. the field searched rarely
 2. the field returns more than 60% of its collection
+3. the collection has a lot of write operations
 
